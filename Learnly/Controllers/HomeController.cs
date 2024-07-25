@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Learnly.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,8 +9,10 @@ namespace Learnly.Controllers
 {
     public class HomeController : Controller
     {
+        myDbContext _DB = new myDbContext();
         public ActionResult Index()
         {
+            var brans = _DB.user.ToList();    
             return View();
         }
 
