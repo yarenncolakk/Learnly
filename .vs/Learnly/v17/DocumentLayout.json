@@ -3,27 +3,55 @@
   "WorkspaceRootPath": "C:\\Users\\yarencolak\\source\\repos\\Learnly\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DC1F3C5B-FC89-4B34-A486-8A3710DC0A9F}|Learnly\\Learnly.csproj|c:\\users\\yarencolak\\source\\repos\\learnly\\learnly\\models\\kullanicilar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DC1F3C5B-FC89-4B34-A486-8A3710DC0A9F}|Learnly\\Learnly.csproj|C:\\Users\\yarencolak\\source\\repos\\Learnly\\learnly\\models\\mydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC1F3C5B-FC89-4B34-A486-8A3710DC0A9F}|Learnly\\Learnly.csproj|solutionrelative:learnly\\models\\mydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC1F3C5B-FC89-4B34-A486-8A3710DC0A9F}|Learnly\\Learnly.csproj|c:\\users\\yarencolak\\source\\repos\\learnly\\learnly\\models\\sorular.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC1F3C5B-FC89-4B34-A486-8A3710DC0A9F}|Learnly\\Learnly.csproj|solutionrelative:learnly\\models\\sorular.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC1F3C5B-FC89-4B34-A486-8A3710DC0A9F}|Learnly\\Learnly.csproj|c:\\users\\yarencolak\\source\\repos\\learnly\\learnly\\models\\sinav_sorulari.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC1F3C5B-FC89-4B34-A486-8A3710DC0A9F}|Learnly\\Learnly.csproj|solutionrelative:learnly\\models\\sinav_sorulari.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC1F3C5B-FC89-4B34-A486-8A3710DC0A9F}|Learnly\\Learnly.csproj|c:\\users\\yarencolak\\source\\repos\\learnly\\learnly\\models\\sinav_sonuclari.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC1F3C5B-FC89-4B34-A486-8A3710DC0A9F}|Learnly\\Learnly.csproj|solutionrelative:learnly\\models\\sinav_sonuclari.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC1F3C5B-FC89-4B34-A486-8A3710DC0A9F}|Learnly\\Learnly.csproj|c:\\users\\yarencolak\\source\\repos\\learnly\\learnly\\models\\sinav_adlari.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC1F3C5B-FC89-4B34-A486-8A3710DC0A9F}|Learnly\\Learnly.csproj|solutionrelative:learnly\\models\\sinav_adlari.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC1F3C5B-FC89-4B34-A486-8A3710DC0A9F}|Learnly\\Learnly.csproj|C:\\Users\\yarencolak\\source\\repos\\Learnly\\learnly\\models\\roller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC1F3C5B-FC89-4B34-A486-8A3710DC0A9F}|Learnly\\Learnly.csproj|solutionrelative:learnly\\models\\roller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC1F3C5B-FC89-4B34-A486-8A3710DC0A9F}|Learnly\\Learnly.csproj|c:\\users\\yarencolak\\source\\repos\\learnly\\learnly\\models\\ogrenci_cevaplari.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC1F3C5B-FC89-4B34-A486-8A3710DC0A9F}|Learnly\\Learnly.csproj|solutionrelative:learnly\\models\\ogrenci_cevaplari.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC1F3C5B-FC89-4B34-A486-8A3710DC0A9F}|Learnly\\Learnly.csproj|C:\\Users\\yarencolak\\source\\repos\\Learnly\\learnly\\models\\kullanicilar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DC1F3C5B-FC89-4B34-A486-8A3710DC0A9F}|Learnly\\Learnly.csproj|solutionrelative:learnly\\models\\kullanicilar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC1F3C5B-FC89-4B34-A486-8A3710DC0A9F}|Learnly\\Learnly.csproj|c:\\users\\yarencolak\\source\\repos\\learnly\\learnly\\models\\konular.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC1F3C5B-FC89-4B34-A486-8A3710DC0A9F}|Learnly\\Learnly.csproj|solutionrelative:learnly\\models\\konular.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC1F3C5B-FC89-4B34-A486-8A3710DC0A9F}|Learnly\\Learnly.csproj|c:\\users\\yarencolak\\source\\repos\\learnly\\learnly\\models\\dogru_cevaplar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC1F3C5B-FC89-4B34-A486-8A3710DC0A9F}|Learnly\\Learnly.csproj|solutionrelative:learnly\\models\\dogru_cevaplar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC1F3C5B-FC89-4B34-A486-8A3710DC0A9F}|Learnly\\Learnly.csproj|C:\\Users\\yarencolak\\source\\repos\\Learnly\\learnly\\models\\branslar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC1F3C5B-FC89-4B34-A486-8A3710DC0A9F}|Learnly\\Learnly.csproj|solutionrelative:learnly\\models\\branslar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DC1F3C5B-FC89-4B34-A486-8A3710DC0A9F}|Learnly\\Learnly.csproj|c:\\users\\yarencolak\\source\\repos\\learnly\\learnly\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DC1F3C5B-FC89-4B34-A486-8A3710DC0A9F}|Learnly\\Learnly.csproj|solutionrelative:learnly\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DC1F3C5B-FC89-4B34-A486-8A3710DC0A9F}|Learnly\\Learnly.csproj|c:\\users\\yarencolak\\source\\repos\\learnly\\learnly\\models\\roller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DC1F3C5B-FC89-4B34-A486-8A3710DC0A9F}|Learnly\\Learnly.csproj|solutionrelative:learnly\\models\\roller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DC1F3C5B-FC89-4B34-A486-8A3710DC0A9F}|Learnly\\Learnly.csproj|c:\\users\\yarencolak\\source\\repos\\learnly\\learnly\\models\\mydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DC1F3C5B-FC89-4B34-A486-8A3710DC0A9F}|Learnly\\Learnly.csproj|solutionrelative:learnly\\models\\mydbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DC1F3C5B-FC89-4B34-A486-8A3710DC0A9F}|Learnly\\Learnly.csproj|c:\\users\\yarencolak\\source\\repos\\learnly\\learnly\\models\\branslar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DC1F3C5B-FC89-4B34-A486-8A3710DC0A9F}|Learnly\\Learnly.csproj|solutionrelative:learnly\\models\\branslar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DC1F3C5B-FC89-4B34-A486-8A3710DC0A9F}|Learnly\\Learnly.csproj|c:\\users\\yarencolak\\source\\repos\\learnly\\learnly\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "AbsoluteMoniker": "D:0:0:{DC1F3C5B-FC89-4B34-A486-8A3710DC0A9F}|Learnly\\Learnly.csproj|C:\\Users\\yarencolak\\source\\repos\\Learnly\\learnly\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{DC1F3C5B-FC89-4B34-A486-8A3710DC0A9F}|Learnly\\Learnly.csproj|solutionrelative:learnly\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     }
   ],
@@ -34,54 +62,76 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 3,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SINAV_SONUCLARI.cs",
+              "DocumentMoniker": "C:\\Users\\yarencolak\\source\\repos\\Learnly\\Learnly\\Models\\SINAV_SONUCLARI.cs",
+              "RelativeDocumentMoniker": "Learnly\\Models\\SINAV_SONUCLARI.cs",
+              "ToolTip": "C:\\Users\\yarencolak\\source\\repos\\Learnly\\Learnly\\Models\\SINAV_SONUCLARI.cs",
+              "RelativeToolTip": "Learnly\\Models\\SINAV_SONUCLARI.cs",
+              "ViewState": "AQIAAAoAAABQMzMzM/MowBMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-29T12:56:52.078Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SINAV_SORULARI.cs",
+              "DocumentMoniker": "C:\\Users\\yarencolak\\source\\repos\\Learnly\\Learnly\\Models\\SINAV_SORULARI.cs",
+              "RelativeDocumentMoniker": "Learnly\\Models\\SINAV_SORULARI.cs",
+              "ToolTip": "C:\\Users\\yarencolak\\source\\repos\\Learnly\\Learnly\\Models\\SINAV_SORULARI.cs",
+              "RelativeToolTip": "Learnly\\Models\\SINAV_SORULARI.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-29T12:54:44.181Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\yarencolak\\source\\repos\\Learnly\\Learnly\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Learnly\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\yarencolak\\source\\repos\\Learnly\\Learnly\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Learnly\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAMAAAA",
+              "Title": "SORULAR.cs",
+              "DocumentMoniker": "C:\\Users\\yarencolak\\source\\repos\\Learnly\\Learnly\\Models\\SORULAR.cs",
+              "RelativeDocumentMoniker": "Learnly\\Models\\SORULAR.cs",
+              "ToolTip": "C:\\Users\\yarencolak\\source\\repos\\Learnly\\Learnly\\Models\\SORULAR.cs",
+              "RelativeToolTip": "Learnly\\Models\\SORULAR.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAABYvRUAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-25T14:34:33.772Z",
+              "WhenOpened": "2024-07-29T10:53:50.1Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Web.config",
-              "DocumentMoniker": "C:\\Users\\yarencolak\\source\\repos\\Learnly\\Learnly\\Web.config",
-              "RelativeDocumentMoniker": "Learnly\\Web.config",
-              "ToolTip": "C:\\Users\\yarencolak\\source\\repos\\Learnly\\Learnly\\Web.config",
-              "RelativeToolTip": "Learnly\\Web.config",
-              "ViewState": "AQIAAAQAAAAAY2ZmZuYswBYAAABuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2024-07-25T12:10:08.665Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "myDbContext.cs",
               "DocumentMoniker": "C:\\Users\\yarencolak\\source\\repos\\Learnly\\Learnly\\Models\\myDbContext.cs",
               "RelativeDocumentMoniker": "Learnly\\Models\\myDbContext.cs",
               "ToolTip": "C:\\Users\\yarencolak\\source\\repos\\Learnly\\Learnly\\Models\\myDbContext.cs",
               "RelativeToolTip": "Learnly\\Models\\myDbContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAJAAAA",
+              "ViewState": "AQIAAAgAAAAgm5mZmdkhwA8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-25T12:01:19.747Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
+              "Title": "SINAV_ADLARI.cs",
+              "DocumentMoniker": "C:\\Users\\yarencolak\\source\\repos\\Learnly\\Learnly\\Models\\SINAV_ADLARI.cs",
+              "RelativeDocumentMoniker": "Learnly\\Models\\SINAV_ADLARI.cs",
+              "ToolTip": "C:\\Users\\yarencolak\\source\\repos\\Learnly\\Learnly\\Models\\SINAV_ADLARI.cs",
+              "RelativeToolTip": "Learnly\\Models\\SINAV_ADLARI.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-29T13:03:48.313Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "ROLLER.cs",
               "DocumentMoniker": "C:\\Users\\yarencolak\\source\\repos\\Learnly\\Learnly\\Models\\ROLLER.cs",
               "RelativeDocumentMoniker": "Learnly\\Models\\ROLLER.cs",
@@ -94,28 +144,97 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
+              "Title": "OGRENCI_CEVAPLARI.cs",
+              "DocumentMoniker": "C:\\Users\\yarencolak\\source\\repos\\Learnly\\Learnly\\Models\\OGRENCI_CEVAPLARI.cs",
+              "RelativeDocumentMoniker": "Learnly\\Models\\OGRENCI_CEVAPLARI.cs",
+              "ToolTip": "C:\\Users\\yarencolak\\source\\repos\\Learnly\\Learnly\\Models\\OGRENCI_CEVAPLARI.cs",
+              "RelativeToolTip": "Learnly\\Models\\OGRENCI_CEVAPLARI.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-29T10:57:41.825Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "KULLANICILAR.cs",
+              "DocumentMoniker": "C:\\Users\\yarencolak\\source\\repos\\Learnly\\Learnly\\Models\\KULLANICILAR.cs",
+              "RelativeDocumentMoniker": "Learnly\\Models\\KULLANICILAR.cs",
+              "ToolTip": "C:\\Users\\yarencolak\\source\\repos\\Learnly\\Learnly\\Models\\KULLANICILAR.cs",
+              "RelativeToolTip": "Learnly\\Models\\KULLANICILAR.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T11:45:13.667Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "KONULAR.cs",
+              "DocumentMoniker": "C:\\Users\\yarencolak\\source\\repos\\Learnly\\Learnly\\Models\\KONULAR.cs",
+              "RelativeDocumentMoniker": "Learnly\\Models\\KONULAR.cs",
+              "ToolTip": "C:\\Users\\yarencolak\\source\\repos\\Learnly\\Learnly\\Models\\KONULAR.cs",
+              "RelativeToolTip": "Learnly\\Models\\KONULAR.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-29T10:47:44.726Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DOGRU_CEVAPLAR.cs",
+              "DocumentMoniker": "C:\\Users\\yarencolak\\source\\repos\\Learnly\\Learnly\\Models\\DOGRU_CEVAPLAR.cs",
+              "RelativeDocumentMoniker": "Learnly\\Models\\DOGRU_CEVAPLAR.cs",
+              "ToolTip": "C:\\Users\\yarencolak\\source\\repos\\Learnly\\Learnly\\Models\\DOGRU_CEVAPLAR.cs",
+              "RelativeToolTip": "Learnly\\Models\\DOGRU_CEVAPLAR.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-29T11:00:36.819Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "BRANSLAR.cs",
               "DocumentMoniker": "C:\\Users\\yarencolak\\source\\repos\\Learnly\\Learnly\\Models\\BRANSLAR.cs",
               "RelativeDocumentMoniker": "Learnly\\Models\\BRANSLAR.cs",
               "ToolTip": "C:\\Users\\yarencolak\\source\\repos\\Learnly\\Learnly\\Models\\BRANSLAR.cs",
               "RelativeToolTip": "Learnly\\Models\\BRANSLAR.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAUAAAA",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAowBMAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-25T11:55:05.138Z",
               "EditorCaption": ""
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "KULLANICILAR.cs",
-              "DocumentMoniker": "C:\\Users\\yarencolak\\source\\repos\\Learnly\\Learnly\\Models\\KULLANICILAR.cs",
-              "RelativeDocumentMoniker": "Learnly\\Models\\KULLANICILAR.cs",
-              "ToolTip": "C:\\Users\\yarencolak\\source\\repos\\Learnly\\Learnly\\Models\\KULLANICILAR.cs*",
-              "RelativeToolTip": "Learnly\\Models\\KULLANICILAR.cs*",
-              "ViewState": "AQIAAAMAAABgMzMzMzMrwBMAAABHAAAA",
+              "DocumentIndex": 11,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\yarencolak\\source\\repos\\Learnly\\Learnly\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Learnly\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\yarencolak\\source\\repos\\Learnly\\Learnly\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Learnly\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAEvQ4AAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-25T11:45:13.667Z",
+              "WhenOpened": "2024-07-25T14:34:33.772Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Web.config",
+              "DocumentMoniker": "C:\\Users\\yarencolak\\source\\repos\\Learnly\\Learnly\\Web.config",
+              "RelativeDocumentMoniker": "Learnly\\Web.config",
+              "ToolTip": "C:\\Users\\yarencolak\\source\\repos\\Learnly\\Learnly\\Web.config",
+              "RelativeToolTip": "Learnly\\Web.config",
+              "ViewState": "AQIAAAQAAAAAY2ZmZuYswBYAAABuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-07-25T12:10:08.665Z",
               "EditorCaption": ""
             }
           ]

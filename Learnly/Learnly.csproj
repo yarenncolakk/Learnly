@@ -132,9 +132,16 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\BRANSLAR.cs" />
+    <Compile Include="Models\DOGRU_CEVAPLAR.cs" />
+    <Compile Include="Models\KONULAR.cs" />
     <Compile Include="Models\myDbContext.cs" />
     <Compile Include="Models\KULLANICILAR.cs" />
+    <Compile Include="Models\OGRENCI_CEVAPLARI.cs" />
     <Compile Include="Models\ROLLER.cs" />
+    <Compile Include="Models\SINAV_ADLARI.cs" />
+    <Compile Include="Models\SINAV_SONUCLARI.cs" />
+    <Compile Include="Models\SINAV_SORULARI.cs" />
+    <Compile Include="Models\SORULAR.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
