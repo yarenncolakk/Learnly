@@ -17,7 +17,6 @@ namespace Learnly.Models
         public DbSet<ROLLER> role { get; set; } 
         public DbSet<SORULAR> question { get; set; }    
         public DbSet<OGRENCI_CEVAPLARI> std_answ {  get; set; } 
-        public DbSet<DOGRU_CEVAPLAR> correct_answ { get; set; } 
         public DbSet<KONULAR> topic { get; set; }
         public DbSet<SINAV_SORULARI> exm_question { get; set; } 
         public DbSet<SINAV_SONUCLARI> exm_result { get; set; }  
