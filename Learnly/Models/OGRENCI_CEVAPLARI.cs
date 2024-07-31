@@ -13,7 +13,8 @@ namespace Learnly.Models
         [Key]
         public int ogrenci_cevabi_id {  get; set; } 
         public int kullanici_id { get; set; }   
-        public int sor_id { get; set; } 
+        public int soru_id { get; set; } 
+        public int sinav_id { get; set; }   
         public string cevap {  get; set; }  
     }
 }

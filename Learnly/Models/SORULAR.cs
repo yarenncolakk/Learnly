@@ -20,6 +20,7 @@ namespace Learnly.Models
         public string E { get; set; }   
         public int brans_id {  get; set; }  
         public int konu_id { get; set; }    
+        public string soru_cevabi {  get; set; }
 
     }
 }
