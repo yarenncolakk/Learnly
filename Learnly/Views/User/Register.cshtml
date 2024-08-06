@@ -1,0 +1,99 @@
+﻿@model LEARNLY.ViewModels.RegisterViewModel
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .password-container {
+            position: relative;
+            width: 100%;
+        }
+
+            .password-container input {
+                width: 100%;
+                padding-right: 40px; /* Adjust based on icon size */
+                box-sizing: border-box;
+            }
+
+        .toggle-password {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #555;
+        }
+
+        .error-message {
+            color: red;
+            display: none;
+        }
+    </style>
+</head>
+<div class="main">
+    <div class="signup">
+        @using (Html.BeginForm("Register", "User", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <label>Kayıt Ol</label>
+            @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "Adınız", required = "required" })
+            @Html.TextBoxFor(m => m.Surname, new { @class = "form-control", placeholder = "Soyadınız", required = "required" })
+    <div>
+        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Mail Adresiniz", required = "required", id = "email" })
+        <span class="error-message" id="emailError">Bu EMail daha önceden kullanılmış</span>
+    </div>
+            <div class="password-container">
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Şifreniz", required = "required", id = "password" })
+                <i class="fas fa-eye toggle-password" id="togglePassword"></i>
+            </div>
+            <button type="submit" id="submitButton" class="disabled" disabled>Kayıt Ol</button>
+            <a href="~/User/Login" class="switch-btn">Giriş Yap</a>
+        }
+    </div>
+</div>
+<script>
+document.getElementById('togglePassword').addEventListener('click', function (e) {
+    const passwordField = document.getElementById('password');
+    const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+    passwordField.setAttribute('type', type);
+    this.classList.toggle('fa-eye');
+    this.classList.toggle('fa-eye-slash');
+});
+
+document.getElementById('email').addEventListener('blur', function () {
+    const email = this.value;
+    const errorMessage = document.getElementById('emailError');
+    const submitButton = document.getElementById('submitButton');
+    if (email) {
+        fetch('/User/IsEmailAvailable', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Requested-With': 'XMLHttpRequest',
+                'X-CSRF-TOKEN': '@Html.AntiForgeryToken()'
+            },
+            body: JSON.stringify({ email: email })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data === false) {
+                errorMessage.style.display = 'block';
+                submitButton.disabled = true;
+                submitButton.classList.add('disabled');
+            } else {
+                errorMessage.style.display = 'none';
+                submitButton.disabled = false;
+                submitButton.classList.remove('disabled');
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    }
+});
+</script>
+
+

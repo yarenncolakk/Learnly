@@ -1,0 +1,85 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş Yap</title>
+    <link rel="stylesheet" href="~/Content/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+    @*<script src="~/Content/app.js"></script>*@
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li class="logo"><a href="#">Learnly.</a></li>
+            @if (Session["UserEmail"] != null)
+            {
+                object userRoleIdObj = Session["UserRoleId"];
+                int userRoleId = 0;
+                if (userRoleIdObj != null)
+                {
+                    int.TryParse(userRoleIdObj.ToString(), out userRoleId);
+                }
+                if (userRoleId == 1)
+                {
+                    <li>@Html.ActionLink("Anasayfa", "Instructor", "Default", new { area = "" }, new { @class = "right" })</li>
+
+                }
+                else
+                {
+                    <li>@Html.ActionLink("Anasayfa", "Student", "Default", new { area = "" }, new { @class = "right" })</li>
+                }
+            }
+            <div class="right-menu">
+            <li class="right">
+                <a href="#"><i class="fa-sharp fa-solid fa-circle-info"></i>Biz Kimiz</a>
+                <div class="navbar-2">
+                    <ul>
+                        <li><a href="#">Vizyonumuz</a></li>
+                        <li><a href="#">Ekibimiz</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="right">
+                <a href="#"><i class="fa-sharp fa-solid fa-phone"></i>İletişim</a>
+                <div class="navbar-2">
+                    <ul>
+                        <li><a href="#">Konum</a></li>
+                        <li><a href="#">Numara</a></li>
+                    </ul>
+                </div>
+            </li>
+    </div>
+    </ul>
+    </div>
+    @RenderBody()
+
+
+    <footer class="footer">
+        <h2>Learnly.</h2>
+        <div class="subject">
+            <ul>
+                <li><a href="">Hakkında</a></li>
+                <li><a href="">Hizmetler</a></li>
+                <li><a href="">Hukuki</a></li>
+                <li><a href="">Bağlantı</a></li>
+            </ul>
+        </div>
+        <h4>kişisel öğrenme yolculuğunuz</h4>
+        <ul>
+            <li class="icon"><a href=""><i class="fa-brands fa-instagram"></i></a></li>
+            <li class="icon"><a href=""><i class="fa-brands fa-facebook-f"></i></a></li>
+            <li class="icon"><a href=""><i class="fa-brands fa-x-twitter"></i></a></li>
+        </ul>
+        <div>
+            <p class="copyright">&copy;2024 LEARNLY. TR</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+﻿@model IEnumerable<LEARNLY.ViewModels.LessonListViewModel>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Ders Listesi";
+}
+
+<h2 class="text-center mt-5">Ders Listesi</h2>
+
+<div class="d-flex justify-content-center mt-5">
+    <div class="card" style="width: 80%;">
+        <div class="card-body">
+            <table class="table table-hover table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Tarih</th>
+                        <th scope="col">Ad Soyad</th>
+                        <th scope="col">Konu</th>
+                        <th scope="col">Ders</th>
+                        <th scope="col">Durum</th>
+                        @if ((int)Session["UserRoleId"] == 1)
+                        {
+                            <th scope="col">Tamamla</th>
+                        }
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr data-id="@item.Id">
+                            <td>@item.Date.ToString("dd.MM.yyyy")</td>
+                            <td>@item.FullName</td>
+                            <td>@item.Topic</td>
+                            <td>@item.Lesson</td>
+                            <td class="status">@item.Status</td>
+                            @if ((int)Session["UserRoleId"] == 1)
+                            {
+                                if (item.Status == "Tamamlandı")
+                                {
+                                    <td>
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td>
+                                        <button type="button" class="btn btn-success complete-button">Tamamla</button>
+                                    </td>
+                                }
+                            }
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.complete-button').click(function() {
+            var row = $(this).closest('tr');
+            var lessonId = row.data('id');
+
+            $.ajax({
+                url: '@Url.Action("CompleteLesson", "Lesson")',
+                type: 'POST',
+                data: { id: lessonId },
+                success: function(response) {
+                    if (response.success) {
+                        row.find('.status').text('Tamamlandı');
+                    } else {
+                        alert('Ders durumu güncellenemedi.');
+                    }
+                }
+            });
+        });
+    });
+</script>

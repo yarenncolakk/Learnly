@@ -1,0 +1,81 @@
+﻿@model LEARNLY.Models.Question
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Sınav";
+    int examId = ViewBag.ExamId;
+    int questionIndex = ViewBag.QuestionIndex;
+}
+
+<div class="book-page">
+    <div class="exam-question">
+        <h2>Soru @(questionIndex + 1)</h2>
+        <p>@Model.QuestionText</p>
+
+        <form action="@Url.Action("SubmitAnswer", "Exam")" method="post">
+            <input type="hidden" name="examId" value="@examId" />
+            <input type="hidden" name="questionIndex" value="@questionIndex" />
+            <input type="hidden" name="questionId" value="@Model.QuestionId" />
+
+            <button type="submit" name="selectedOption" value="A" class="option-button">A. @Model.OptionA</button><br />
+            <button type="submit" name="selectedOption" value="B" class="option-button">B. @Model.OptionB</button><br />
+            <button type="submit" name="selectedOption" value="C" class="option-button">C. @Model.OptionC</button><br />
+            <button type="submit" name="selectedOption" value="D" class="option-button">D. @Model.OptionD</button><br />
+            <button type="submit" name="selectedOption" value="E" class="option-button">E. @Model.OptionE</button>
+        </form>
+    </div>
+</div>
+
+<style>
+    body {
+        background-image: url('https://dijital.ninja/wp-content/uploads/2021/01/pink-green-gradient-1920x1080_c.jpg');
+        font-family: 'Georgia', serif;
+    }
+
+    .book-page {
+        width: 80%;
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 40px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 15px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .exam-question {
+        text-align: left;
+        margin: 0 auto;
+    }
+
+        .exam-question h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .exam-question p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+    .option-button {
+        display: block;
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        text-align: left;
+        font-size: 1.2em;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        .option-button:hover {
+            background-color: #0056b3;
+        }
+</style>

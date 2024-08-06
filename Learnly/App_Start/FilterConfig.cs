@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace Learnly
+namespace LEARNLY
 {
     public class FilterConfig
     {

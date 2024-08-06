@@ -1,0 +1,49 @@
+﻿@model LEARNLY.ViewModels.LessonRequestViewModel
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Özel Ders Talebi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .small-label {
+            font-size: 20px; /* Boyutu ayarlayın */
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="lesson-request">
+            @using (Html.BeginForm("LessonRequest", "Lesson", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                <div class="form-group">
+                    @Html.Label("Öğretmen Seçin", null, new { @class = "small-label" })
+                    @Html.DropDownListFor(m => m.Teacher, (SelectList)ViewBag.Teachers, "Öğretmen Seçin", new { @class = "form-control", required = "required" })
+                </div>
+                <div class="form-group">
+                    @Html.Label("Konu Seçin", null, new { @class = "small-label" })
+                    @Html.DropDownListFor(m => m.Topic, (SelectList)ViewBag.Topics, "Konu Seçin", new { @class = "form-control", required = "required" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.LessonDate, "Tercih Edilen Tarih", new { @class = "small-label" })
+                    @Html.TextBoxFor(m => m.LessonDate, "{0:yyyy-MM-dd}", new { @class = "form-control", type = "date", required = "required" })
+                </div>
+                <button type="submit" class="btn btn-primary">Ders Talep Et</button>
+            }
+        </div>
+    </div>
+</body>
+</html>

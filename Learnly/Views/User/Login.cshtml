@@ -1,31 +1,61 @@
-﻿
-@{
-    ViewBag.Title = "Login";
-}
+﻿@model LEARNLY.ViewModels.LoginViewModel
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .password-container {
+            position: relative;
+            width: 100%;
+        }
+
+            .password-container input {
+                width: 100%;
+                padding-right: 40px; /* Adjust based on icon size */
+                box-sizing: border-box;
+            }
+
+        .toggle-password {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #555;
+        }
+    </style>
+</head>
 
 <div class="main">
-    <input type="checkbox" id="chk" aria-hidden="true">
-
-    <div class="signup">
-        <form>
-            <label for="chk" aria-hidden="true">Kayıt Ol</label>
-            <input type="text" name="txt" placeholder="Kullanıcı Adı" required="">
-            <input type="email" name="email" placeholder="Email" required="">
-            <input type="number" name="broj" placeholder="Telefon numarası" required="">
-            <input type="password" name="pswd" placeholder="Şifre" required="">
-            <button>Kayıt Ol</button>
-        </form>
-    </div>
-
     <div class="login">
-        <form>
-            <label for="chk" aria-hidden="true">Giriş Yap</label>
-            <input type="email" name="email" placeholder="Email" required="">
-            <input type="password" name="pswd" placeholder="Şifre" required="">
-            <button>Giriş Yap</button>
-        </form>
+        @using (Html.BeginForm("Login", "User", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <label>Giriş Yap</label>
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Email", required = "required" })
+            <div class="password-container">
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Şifreniz", required = "required", id = "password" })
+                <i class="fas fa-eye toggle-password" id="togglePassword"></i>
+            </div>
+            <button type="submit">Giriş Yap</button>
+            <a href="~/User/Register" class="switch-btn">Kayıt Ol</a>
+            <div>
+                @ViewBag.Message
+            </div>
+        }
     </div>
 </div>
-
-
+<script>
+    document.getElementById('togglePassword').addEventListener('click', function (e) {
+        const passwordField = document.getElementById('password');
+        const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordField.setAttribute('type', type);
+        this.classList.toggle('fa-eye');
+        this.classList.toggle('fa-eye-slash');
+    });
+</script>
 

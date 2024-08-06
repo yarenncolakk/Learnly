@@ -1,68 +1,103 @@
-﻿using Learnly.Models;
-using Learnly.ViewModels;
-using Microsoft.Ajax.Utilities;
+﻿using LEARNLY.Custom;
+using LEARNLY.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Learnly.Controllers
+namespace LEARNLY.Controllers
 {
+    [Authorize]
     public class ExamController : Controller
     {
-        myDbContext _DB = new myDbContext();
+        private LearnlyContext db = new LearnlyContext();
         // GET: Exam
-        public ActionResult Exam(/*int branch_id*/)
+        public ActionResult Index()
         {
-            int branch_id = 1;
-            var exams = _DB.question.Where(x => x.brans_id == branch_id).GroupBy(x=>x.konu_id).ToList();
-            List<SORULAR> questions = new List<SORULAR>();
+            return View();
+        }
+        public ActionResult StartExam(int branchId)
+        {
+            var exams = db.Questions.Where(x => x.BranchId == branchId).GroupBy(x => x.TopicId).ToList();
+            List<Question> questions = new List<Question>();
             foreach (var exam in exams)
             {
                 Random rnd = new Random();
-                var liste = new List<SORULAR>();
+                var list = new List<Question>();
                 foreach (var item in exam)
                 {
-                    liste.Add(item);
+                    list.Add(item);
                 }
-                
-                int index = rnd.Next(liste.Count);
-                questions.Add(liste[index]);
+
+                int index = rnd.Next(list.Count);
+                questions.Add(list[index]);
             }
-            
-            var sinav_id = _DB.exm_question.GroupBy(x=>x.sinav_id).Count();
-            if(sinav_id == null)
-            {
-                sinav_id = 1;
-            }
-            else
-            {
-                sinav_id += 1;
-            }
+
+            var examId = db.ExamQuestions.GroupBy(x => x.ExamId).Count() + 1;
             foreach (var item in questions)
             {
-                var question = new SINAV_SORULARI();
-                question.soru_id = item.soru_id;
-                question.sinav_id = sinav_id;   
-                _DB.exm_question.Add(question);
-                 
+                var question = new ExamQuestion();
+                question.QuestionId = item.QuestionId;
+                question.ExamId = examId;
+                db.ExamQuestions.Add(question);
+
             }
-            _DB.SaveChanges();
-            return View();
+            db.SaveChanges();
+            return RedirectToAction("TakeExam", new { examId = examId, questionIndex = 0 });
+        }
+        // Sınav ekranını göstermek için
+        public ActionResult TakeExam(int examId, int questionIndex)
+        {
+            var examQuestions = (from eq in db.ExamQuestions
+                                 join q in db.Questions on eq.QuestionId equals q.QuestionId
+                                 where eq.ExamId == examId
+                                 select q).ToList();
+
+            if (questionIndex >= examQuestions.Count)
+            {
+                return RedirectToAction("CompleteExam", new { examId = examId });
+            }
+
+            var question = examQuestions[questionIndex];
+            ViewBag.ExamId = examId;
+            ViewBag.QuestionIndex = questionIndex;
+
+            return View(question);
+        }
+        [HttpPost]
+        public ActionResult SubmitAnswer(int examId, int questionIndex, int questionId, string selectedOption)
+        {
+            int userId = (int)Session["UserId"];
+            // Cevabı dbye yaz
+            var studentAnswer = new StudentAnswer
+            {
+                QuestionId = questionId,
+                Answer = selectedOption,
+                ExamId = examId,
+                UserId = userId
+            };
+
+            db.StudentAnswers.Add(studentAnswer);
+            db.SaveChanges();
+
+            // Bir sonraki soruya geçiş
+            return RedirectToAction("TakeExam", new { examId = examId, questionIndex = questionIndex + 1 });
         }
 
-        public ActionResult Grade(bool exam_ststus, int exam_id, int user_id)
+        // Sınavı tamamlama ekranı
+        public ActionResult CompleteExam(int examId)
         {
-            var answers = _DB.std_answ.Where(x => x.sinav_id == exam_id && x.kullanici_id == user_id).ToList(); 
+            int userId = (int)Session["UserId"];
+            var answers = db.StudentAnswers.Where(x => x.ExamId == examId && x.UserId == userId).ToList();
             int true_answers = 0;
             int false_answers = 0;
 
             foreach (var answ in answers)
             {
-                var correct_answ = _DB.question.Where(x => x.soru_id == answ.soru_id).FirstOrDefault().soru_cevabi;
+                var correct_answ = db.Questions.Where(x => x.QuestionId == answ.QuestionId).FirstOrDefault().Answer;
                 //var sayac=correct_answ == answ.cevap ? true_answers++ : false_answers++;
-                if (correct_answ == answ.cevap)
+                if (correct_answ == answ.Answer)
                 {
                     true_answers++;
                 }
@@ -72,16 +107,19 @@ namespace Learnly.Controllers
                 }
             }
 
-            var result = new SINAV_SONUCLARI();
-            result.kullanici_id = user_id;
-            result.sinav_id = exam_id;
-            result.sinav_tarihi = DateTime.Now;
-            result.toplam_dogru_sayisi = true_answers;
-            result.toplam_yanlis_sayisi = false_answers;
-           
-            _DB.exm_result.Add(result);
-            _DB.SaveChanges();  
+            var result = new ExamResult();
+            result.UserId = userId;
+            result.ExamId = examId;
+            result.ExamDate = DateTime.Now;
+            result.TotalCorrectCount = true_answers;
+            result.TotalIncorrectCount = false_answers;
+            db.ExamResults.Add(result);
+            db.SaveChanges();
+            ViewBag.Correct = true_answers;
+            ViewBag.Incorrect = false_answers;
+            ViewBag.ExamId = examId;
             return View();
         }
+        
     }
 }

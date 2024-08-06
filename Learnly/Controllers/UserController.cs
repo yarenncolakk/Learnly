@@ -1,78 +1,94 @@
-﻿using Learnly.Models;
-using Microsoft.Ajax.Utilities;
+﻿using LEARNLY.Custom;
+using LEARNLY.Models;
+using LEARNLY.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.NetworkInformation;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
-namespace Learnly.Controllers
+namespace LEARNLY.Controllers
 {
     public class UserController : Controller
     {
-        myDbContext _DB = new myDbContext();
-        // GET: User
-        public ActionResult Login()
-        {
-            return View();
-        }
-        [HttpPost] //frontend den gelen verilerle işlem yapılacak
-        public ActionResult Login(string kullaniciadi, string parola)
-        {
-            var kullanicilar = _DB.user.Where(x => x.ad == kullaniciadi && x.parola == parola).ToList();
-            if (kullanicilar.Count() > 0)
-            {
-                //int rol = kullanicilar.Where(x => x.rol_id == 1).Count();
-                var b = Convert.ToInt16(kullanicilar.Select(x => x.rol_id));
-                if (b == 1)
-                {
-                    return View("OgretmenAnasayfa");  //bu sayfayı dön
-                }
-                else
-                {
-                    return View("OgrenciAnasayfa");
-                }
-            }
-            else
-            {
 
-                ViewBag.Message = "Kullanıcı Adı veya Şifre Hatalı!";
-                return View();
-            }
-
-        }
-
-        public ActionResult SignUp()
+        private LearnlyContext db = new LearnlyContext();
+        public ActionResult Register()
         {
             return View();
         }
         [HttpPost]
-
-        public ActionResult SignUp(string userName, string email, string phone, string password)
+        [ValidateAntiForgeryToken]
+        public ActionResult Register(RegisterViewModel user)
         {
-            var newUser = new KULLANICILAR();
-            newUser.ad = userName;
-            newUser.eposta = email;
-            //user.
-            newUser.parola = password;
-            _DB.user.Add(newUser);
-            _DB.SaveChanges();
-            return View("Login");
+            if (ModelState.IsValid)
+            {
+                var _user = new User();
+                _user.Email = user.Email;
+                _user.Name = user.Name;
+                _user.Surname = user.Surname;
+                _user.Password = HashPassword(user.Password);
+                _user.BranchId = 0;
+                _user.RoleId = 2;
+                db.Users.Add(_user);
+                db.SaveChanges();
+                return RedirectToAction("Login");
+            }
+            return View(user);
+        }
 
-            //var ad = _DB.user.Where(x => x.ad == userName).ToList();  
-            //if(ad.Count() == 1)
-            //{
-            //    ViewBag.Message = "Bu kullanıcı adı alındı.";
-            //   return View();
-            //}
+        public ActionResult Login()
+        {
+            return View();
+        }
 
-            //var eposta = _DB.user.Where(x => x.eposta == email).ToList();
-            //if (eposta.Count() ==  1)
-            //{
-            //    ViewBag.Message = "Bu e-mail başka bir kullanıcı tarafından kullanılıyor.";
-            //    return View();
-            //}
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Login(LoginViewModel user)
+        {
+            var hashedPassword = HashPassword(user.Password);
+            var _user = db.Users.FirstOrDefault(x => x.Email == user.Email && x.Password == hashedPassword);
+            if (_user != null)
+            {
+                // Giriş başarılı, oturum açma işlemlerini gerçekleştirin
+                Session["UserId"] = _user.UserId;
+                Session["UserName"] = _user.Name;
+                Session["UserEmail"] = _user.Email;
+                Session["UserSurame"]= _user.Surname;
+                Session["UserRoleId"] = _user.RoleId;
+                FormsAuthentication.SetAuthCookie(_user.UserId.ToString(), false);
+                return _user.BranchId == 0 ? RedirectToAction("Student", "Default") : RedirectToAction("LessonList", "Lesson");
+            }
+            ViewBag.Message = "Geçersiz email veya şifre";
+            return View("Login", user);
+        }
+        private string HashPassword(string password)
+        {
+            using (var sha256 = SHA256.Create())
+            {
+                var bytes = Encoding.UTF8.GetBytes(password);
+                var hash = sha256.ComputeHash(bytes);
+                return Convert.ToBase64String(hash);
+            }
+        }
+
+        [HttpPost]
+        public JsonResult IsEmailAvailable(string email)
+        {
+            // EMail adresi Veritabanında kontrol ediliyor
+            bool isAvailable = !db.Users.Any(u => u.Email == email);
+            return Json(isAvailable);
+        }
+
+        public ActionResult Logout()
+        {
+            Session.Clear();
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Login");
         }
     }
 }

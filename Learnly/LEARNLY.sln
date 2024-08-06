@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LEARNLY", "LEARNLY.csproj", "{D443B440-FF29-428C-AA4C-B1EE1F8714BD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D443B440-FF29-428C-AA4C-B1EE1F8714BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D443B440-FF29-428C-AA4C-B1EE1F8714BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D443B440-FF29-428C-AA4C-B1EE1F8714BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D443B440-FF29-428C-AA4C-B1EE1F8714BD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {70B701A4-FB82-4E12-B758-517D707DB689}
+	EndGlobalSection
+EndGlobal

@@ -1,24 +1,22 @@
-﻿using Learnly.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Learnly.Controllers
+namespace LEARNLY.Controllers
 {
+    [Authorize]
     public class DefaultController : Controller
     {
-        myDbContext _DB = new myDbContext();
         // GET: Default
-        public ActionResult StudentPage()
+        public ActionResult Student()
         {
             return View();
         }
-
-        public ActionResult TeacherPage()
+        public ActionResult Instructor()
         {
-            return View();  
+            return View();
         }
     }
 }
